@@ -73,7 +73,7 @@ void editingstudents() {
     cout << "GPA: " << students[index].gpa << endl;
     cout << endl;
 
-    cout << "Do you want to Edit Student Data? (yes/no): ";
+    cout << "Do you want to Edit Student Data? [yes/no]: ";
     cin >> pick;
 
     if (pick == "yes") {
