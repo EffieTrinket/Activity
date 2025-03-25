@@ -5,7 +5,8 @@ using namespace std;
 
 struct Student {
     int studentid;
-    string studentname;
+    string studentname1;
+    string studentname2;
     float gpa;
 };
 
@@ -39,8 +40,10 @@ void Addingstudents() {
             return;
         }
     }
-    cout << "Please Enter Student Name [Family Name]: ";
-    cin >> stdnt.studentname;
+    cout << "Please Enter Student Name [First Name]: ";
+    cin >> stdnt.studentname1;
+    cout << "Please Enter Student Name [First Name]: ";
+    cin >> stdnt.studentname2;
     cout << "Please Enter GPA: ";
     cin >> stdnt.gpa;
     cout << " " << endl;
@@ -66,7 +69,7 @@ void editingstudents() {
 
     cout << endl << "Student Details:" << endl;
     cout << "ID: " << students[index].studentid << endl;
-    cout << "Name: " << students[index].studentname << endl;
+    cout << "Name: " << students[index].studentname1 << " " << students[index].studentname2 << endl;
     cout << "GPA: " << students[index].gpa << endl;
     cout << endl;
 
@@ -107,8 +110,10 @@ void editingstudents() {
                         break;}
 
                 case 2:
-                    cout << "Enter New Name [Family Name]: ";
-                    cin >> students[index].studentname;
+                    cout << "Enter New Name [First Name]: ";
+                    cin >> students[index].studentname1;
+                    cout << "Enter New Name [Last Name]: ";
+                    cin >> students[index].studentname2;
                     break;
 
                 case 3:
@@ -126,9 +131,9 @@ void editingstudents() {
 
             cout << endl << "Updated Student Details:" << endl;
             cout << "ID: " << students[index].studentid << endl;
-            cout << "Name: " << students[index].studentname << endl;
+            cout << "Name: " << students[index].studentname1 << " " << students[index].studentname2 << endl;
             cout << "GPA: " << students[index].gpa << endl;
-            cout << endl;
+            cout << " " << endl;
             cout << "Student Information Updated Successfully!" << endl;
 
         } while (choice != 4);
@@ -151,7 +156,7 @@ void deletingstudent() {
     cout << " " << endl;
     cout << endl << "Student Details:" << endl;
     cout << "ID: " << students[index].studentid << endl;
-    cout << "Name: " << students[index].studentname << endl;
+    cout << "Name: " << students[index].studentname1 << " " << students[index].studentname2 << endl;
     cout << "GPA: " << students[index].gpa << endl;
     cout << " " << endl;
 
@@ -196,7 +201,7 @@ void displayStudents() {
     if (choice == 1) {
         for (int i = 0; i < studentCount - 1; i++) {
             for (int j = 0; j < studentCount - i - 1; j++) {
-                if (temp[j].studentname > temp[j + 1].studentname) {
+                if (temp[j].studentname1 > temp[j + 1].studentname1) {
                     swap(temp[j], temp[j + 1]);
                 }
             }
@@ -218,7 +223,7 @@ void displayStudents() {
     cout << " " << endl;
     cout << "Student List: " << endl;
     for (int i = 0; i < studentCount; i++) {
-        cout << "ID: " << temp[i].studentid << ", Name: " << temp[i].studentname << ", GPA: " << temp[i].gpa << endl;
+        cout << "ID: " << temp[i].studentid << ", Name: " << temp[i].studentname1 << " " << temp[i].studentname2 << ", GPA: " << temp[i].gpa << endl;
     }
 }
 
